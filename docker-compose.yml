@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+
+  api:
+    build: .
+    container_name: api
+    environment:
+      DATABASE_URL: "sqlite:///db.sqlite"
+      DEBUG: "False"
+    volumes:
+      - ./db.sqlite:/User_Survey/db.sqlite
+    ports:
+      - "8000:8000"

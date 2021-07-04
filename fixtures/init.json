@@ -1,0 +1,138 @@
+[
+{
+  "model": "surveys.survey",
+  "pk": 1,
+  "fields": {
+    "name": "\u043e\u043f\u0440\u043e\u0441 1",
+    "start_date": "2021-07-02T17:10:55Z",
+    "end_date": "2021-07-12T14:14:00Z",
+    "survey_description": "\u041e\u043f\u0440\u043e\u0441 1"
+  }
+},
+{
+  "model": "surveys.survey",
+  "pk": 2,
+  "fields": {
+    "name": "\u043e\u043f\u0440\u043e\u0441 2",
+    "start_date": "2021-07-03T14:10:00Z",
+    "end_date": "2021-07-10T14:14:00Z",
+    "survey_description": "\u041e\u043f\u0440\u043e\u0441 2"
+  }
+},
+{
+  "model": "surveys.survey",
+  "pk": 3,
+  "fields": {
+    "name": "\u043e\u043f\u0440\u043e\u0441 3",
+    "start_date": "2021-07-03T14:10:00Z",
+    "end_date": "2021-07-10T14:14:00Z",
+    "survey_description": "\u041e\u043f\u0440\u043e\u0441 3"
+  }
+},
+{
+  "model": "surveys.question",
+  "pk": 1,
+  "fields": {
+    "survey": 2,
+    "question": "\u0412\u043e\u043f\u0440\u043e\u0441 1",
+    "question_type": "TEXT"
+  }
+},
+{
+  "model": "surveys.question",
+  "pk": 2,
+  "fields": {
+    "survey": 2,
+    "question": "\u0412\u043e\u043f\u0440\u043e\u0441 1 \u043e\u043f\u0440\u043e\u04412",
+    "question_type": "TEXT"
+  }
+},
+{
+  "model": "surveys.question",
+  "pk": 3,
+  "fields": {
+    "survey": 1,
+    "question": "\u0412\u043e\u043f\u0440\u043e\u0441 11",
+    "question_type": "CHOICE"
+  }
+},
+{
+  "model": "surveys.question",
+  "pk": 4,
+  "fields": {
+    "survey": 1,
+    "question": "\u0412\u043e\u043f\u0440\u043e\u0441 12",
+    "question_type": "TEXT"
+  }
+},
+{
+  "model": "surveys.question",
+  "pk": 5,
+  "fields": {
+    "survey": 1,
+    "question": "\u041c\u043d\u043e\u0433\u043e",
+    "question_type": "MULTICHOICE"
+  }
+},
+{
+  "model": "surveys.question",
+  "pk": 6,
+  "fields": {
+    "survey": 1,
+    "question": "\u0412\u043e\u043f\u0440\u043e\u0441 21",
+    "question_type": "CHOICE"
+  }
+},
+{
+  "model": "surveys.question",
+  "pk": 7,
+  "fields": {
+    "survey": 1,
+    "question": "\u0412\u043e\u043f\u0440\u043e\u0441 1",
+    "question_type": "TEXT"
+  }
+},
+{
+  "model": "surveys.variants",
+  "pk": 1,
+  "fields": {
+    "question": 1,
+    "answer_option": "\u0414\u0410"
+  }
+},
+{
+  "model": "surveys.variants",
+  "pk": 2,
+  "fields": {
+    "question": 1,
+    "answer_option": "\u041d\u0435\u0442"
+  }
+},
+{
+  "model": "surveys.variants",
+  "pk": 3,
+  "fields": {
+    "question": 2,
+    "answer_option": "\u0414\u0410"
+  }
+},
+{
+  "model": "surveys.variants",
+  "pk": 4,
+  "fields": {
+    "question": 5,
+    "answer_option": "\u0414\u0410"
+  }
+},
+{
+  "model": "surveys.answer",
+  "pk": 1,
+  "fields": {
+    "user_id": 1,
+    "survey": 1,
+    "quest": 5,
+    "variant": 4,
+    "variant_text": null
+  }
+}
+]
