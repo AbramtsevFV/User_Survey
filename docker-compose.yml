@@ -1,14 +1,15 @@
-version: "2"
-
+version: '3.8'
 services:
 
   api:
     build: .
+    command: python manage.py runserver 0.0.0.0:8000
     container_name: api
     environment:
       DATABASE_URL: "sqlite:///db.sqlite"
       DEBUG: "False"
     volumes:
-      - ./db.sqlite:/User_Survey/db.sqlite
+      - ./db.sqlite:/code/db.sqlite
     ports:
       - "8000:8000"
+
