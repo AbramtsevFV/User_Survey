@@ -6,22 +6,24 @@
   docker-compose up -d
   
 2) Переходим по адресу
-  http://127.0.0.1:8000/api/
+  [http://127.0.0.1:8000/api/]
  Пользователь админ уже добавлен.
     User: admin
     Pass: admin
 ### API ###
 
 1)Добавление опроса. 
-    http://127.0.0.1:8000/api/survey_create/
+    [http://127.0.0.1:8000/api/survey_create/]
     Метод добавляет опрос
+    >
     Пример POST запроса в теле JSON:
+    
     {
     "name": "опрос 3",
     "start_date": "2021-07-03T17:10:00+03:00",
     "end_date": "2021-07-10T17:14:00+03:00",
     "survey_description": "Опрос 3"
-    }
+    }>
 2) Обновить/удалить опрос.
     http://127.0.0.1:8000/survey_update_del/<int:survey_id>
     <int:survey_id> - id опроса
