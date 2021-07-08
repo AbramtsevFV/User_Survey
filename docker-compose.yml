@@ -6,11 +6,5 @@ services:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
     container_name: api
-    environment:
-      DATABASE_URL: "sqlite:///db.sqlite"
-      DEBUG: "False"
-    volumes:
-      - ./db.sqlite:/usr/src/app/db.sqlite
     ports:
       - "8000:8000"
-
