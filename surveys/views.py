@@ -121,7 +121,6 @@ def question_update_del(request, question_id):
     """
     question = get_object_or_404(Question, pk=question_id)
     if request.method == 'PATCH':
-        print(request.data)
         serializer = QuestionSerializer(question, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
@@ -164,7 +163,6 @@ def variants_update_del(request, variants_id):
     """
     variants = get_object_or_404(Variants, pk=variants_id)
     if request.method == 'PATCH':
-        print(request.data)
         serializer = VariantsSerializer(variants, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
@@ -210,6 +208,5 @@ def answer_view(request, user_id):
     Метод возращает список ответов пользователя.
     """
     answer = Answer.objects.filter(user_id=user_id)
-    print(answer)
     serializer = AnswerSerializer(answer, many=True)
     return Response(serializer.data)
