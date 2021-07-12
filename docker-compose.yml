@@ -1,24 +1,16 @@
-version: '3.7'
+version: '3'
 
 
 services:
-  postgresql_db:
-    image: postgres:10.1-alpine
-    volumes:
-    - postgres_data:/var/lib/postgresql/data/
-
   api:
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-    command: bash -c "python manage.py migrate &&
-              python manage.py loaddata ./fixtures/init.json &&
-             python manage.py runserver 0.0.0.0:8000"
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    container_name: api
+    environment:
+      DATABASE_URL: "sqlite:///db.sqlite"
+      DEBUG: "False"
     volumes:
-    - /usr/src/app
+      - ./db.sqlite:/usr/src/app/db.sqlite
     ports:
       - "8000:8000"
-    depends_on:
-      - postgresql_db
-volumes:
-  postgres_data:
+
