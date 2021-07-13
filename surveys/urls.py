@@ -1,11 +1,13 @@
-from django.urls import path
+from django.urls import path, include
 from .views import *
-
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 
 
 urlpatterns = [
-                path('auth/', auth_view, name='auth'),
+                # Получение доступа
+                path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+                path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
                 # Для Админов
                 # Опрос
                 path('survey_create/', survey_create, name='survey_create'),
