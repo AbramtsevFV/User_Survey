@@ -15,6 +15,33 @@
  >User: admin
  >
  >Pass: admin
+### Авторизация пользователя ###
+1) Отправьте POST запрос, по адресу:
+```
+  http://127.0.0.1:8000/api/token/
+```
+В теле JSON:
+```
+    {
+      "username": "",
+      "password": ""
+  }
+```
+На выходе получите token access  и refresh. 
+
+2) Для обновления TOKEN
+ Отправьте POST запрос:
+```
+  http://127.0.0.1:8000/api/token/refresh/
+```
+ В теле JSON:
+```
+  {
+    "refresh": ""
+  }
+```
+3) Для авторизации:
+ в Hefders добавит ключ Authorization с значением Bearer <token  access>
 ### API ###
 
 1)Добавление опроса.
