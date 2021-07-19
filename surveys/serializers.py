@@ -13,9 +13,9 @@ class CurrentUserDefault(object):
 
 class AnswerSerializer(ModelSerializer):
     user_id = IntegerField(default=CurrentUserDefault())
-    survey = SlugRelatedField(queryset=Survey.objects.all(), slug_field='id')
-    quest = SlugRelatedField(queryset=Question.objects.all(), slug_field='id')
-    variant = SlugRelatedField(queryset=Variants.objects.all(), slug_field='id', allow_null=True)
+    survey = SlugRelatedField(queryset=Survey.objects.all(), slug_field='name')
+    quest = SlugRelatedField(queryset=Question.objects.all(), slug_field='question')
+    variant = SlugRelatedField(queryset=Variants.objects.all(), slug_field='answer_option', allow_null=True)
     variant_text = CharField(max_length=200, allow_null=True, required=False)
 
     class Meta:
