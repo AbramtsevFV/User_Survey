@@ -1,3 +1,4 @@
+from drf_writable_nested import WritableNestedModelSerializer
 from rest_framework.relations import SlugRelatedField
 from rest_framework.serializers import ModelSerializer, IntegerField, CharField, ValidationError
 from .models import Survey, Question, Variants, Answer
@@ -41,13 +42,14 @@ class VariantsSerializer(ModelSerializer):
         model = Variants
         fields = ('id', 'question', 'answer_option')
 
-class QuestionSerializer(ModelSerializer):
+class QuestionSerializer(WritableNestedModelSerializer):
     id = IntegerField(read_only=True)
-    variants = VariantsSerializer(many=True, read_only=True)
+    variants = VariantsSerializer(many=True)
 
     class Meta:
         model = Question
         fields = ('id', 'survey', 'question', 'question_type', 'variants')
+
 
 
 class Surveyserializers(ModelSerializer):
@@ -57,6 +59,7 @@ class Surveyserializers(ModelSerializer):
     class Meta:
         model = Survey
         fields = ('id', 'name', 'start_date', 'end_date', 'survey_description', 'questions')
+
 
 
     def update(self, instance, validated_data):

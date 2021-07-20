@@ -78,14 +78,21 @@ WSGI_APPLICATION = 'User_Survey.wsgi.application'
 
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'postgres',
-#         'USER': 'postgres',
-#         'HOST': 'postgresql_db',
-#         'PORT': 5432,
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': str(os.path.join(BASE_DIR, "db.sqlite3")),
 #     }
-#  }
+# }
 
+# Настройки для подключения к БД Postgres
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'HOST': 'postgresql_db',
+        'PORT': 5432,
+    }
+ }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

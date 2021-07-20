@@ -12,7 +12,7 @@ class Surve_ViewSet(ModelViewSet):
 
     def list(self, request):
         survey = Survey.objects.filter(end_date__gte=timezone.now()).filter(start_date__lte=timezone.now())
-        serializer = Surveyserializers(survey, many=True, )
+        serializer = Surveyserializers(survey, many=True,)
         return Response(serializer.data)
 
     def get_permissions(self):
